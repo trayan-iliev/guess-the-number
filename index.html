@@ -12,10 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="app.js" defer></script>
   </head>
   <body>
-    <h1>What number am I thinking of?</h1>
-    <input type="text" /> <button>OK</button>
+    <div class="robot-says">What number am I thinking of?</div>
+    <input type="number" class="input" min="1" max="20" placeholder="0" />
+    <button type="submit" class="btn check">Check!</button>
 
     <div class="score">
       <p>Attempts remaining:</p>
