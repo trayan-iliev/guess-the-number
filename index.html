@@ -15,18 +15,27 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div class="robot-says">What number am I thinking of?</div>
+    <div class="robot-says">
+      <h1 class="robot-says-heading">What number am I thinking of?</h1>
+      <p>(between 1 and 20)</p>
+    </div>
+
     <div class="robot">
       <div class="robot-number-field">? ?</div>
-      <img class="robot-image" src="img/robot-default.svg" alt="" />
+      <!-- <img class="robot-image" src="img/robot-default.svg" alt="" /> -->
     </div>
+
     <section class="bottom">
       <input type="number" class="input" min="1" max="20" placeholder="0" />
       <button type="submit" class="btn check">Check!</button>
     </section>
+
     <div class="score">
       <p>Attempts remaining:</p>
       <p>High score:</p>
     </div>
   </body>
+  <p class="copyright">
+    Copyright &copy; 2024 Trayan Iliev. All rights reserved.
+  </p>
 </html>

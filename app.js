@@ -3,14 +3,14 @@
 // Game logic
 function checkNumber(robotNumber, userInput) {
   if (userInput == robotNumber) {
-    document.querySelector(".robot-says").textContent = `You win!`;
+    document.querySelector(".robot-says-heading").textContent = `You win!`;
     document.querySelector(".robot-number-field").textContent = robotNumber;
     if (currentScore > highScore) highScore = currentScore;
   } else if (userInput >= robotNumber) {
-    document.querySelector(".robot-says").textContent = `Try lower!`;
+    document.querySelector(".robot-says-heading").textContent = `Try lower!`;
     currentScore--;
   } else {
-    document.querySelector(".robot-says").textContent = `Try higher!`;
+    document.querySelector(".robot-says-heading").textContent = `Try higher!`;
     currentScore--;
   }
 }

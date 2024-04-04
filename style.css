@@ -6,13 +6,32 @@
   font-family: "Rajdhani", sans-serif;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
 body {
   background-color: #17171a;
   color: #b3b3b3;
 }
 
 .robot {
+  background-image: url("img/robot-default.svg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  height: 30em;
   padding-top: 1em;
+  margin-top: 1em;
   background-color: #b3b3b3;
   justify-content: center;
   align-items: center;
@@ -36,14 +55,14 @@ body {
   letter-spacing: 3px;
 }
 
-.robot img {
+/* .robot img {
   min-width: 100px;
   max-width: 400px;
   margin-top: 1em;
   display: block;
   margin-left: auto;
   margin-right: auto;
-}
+} */
 
 .bottom {
   display: flex;
@@ -53,9 +72,46 @@ body {
 }
 
 .robot-says {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.robot-says h1 {
   font-weight: 100;
   font-size: 3em;
   text-align: center;
+}
+
+.robot-says p {
+  line-height: 0px;
+  font-weight: 500;
+  font-size: 1em;
+  text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.input {
+  background-color: transparent;
+  caret-color: transparent;
+  border: 5px solid #b3b3b3;
+  outline: none;
+  color: #b3b3b3;
+  font-size: 60px;
+  font-weight: 700;
+  text-align: center;
+  width: 100px;
+  margin-right: 0.7em;
+}
+
+.btn {
+  background-color: transparent;
+  border: 5px solid #b3b3b3;
+  width: 100px;
+  font-weight: 700;
+  font-size: 20px;
+  color: #b3b3b3;
+}
+
+.copyright {
+  font-size: 14px;
 }
