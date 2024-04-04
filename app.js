@@ -4,6 +4,7 @@
 function checkNumber(robotNumber, userInput) {
   if (userInput == robotNumber) {
     document.querySelector(".robot-says").textContent = `You win!`;
+    document.querySelector(".robot-number-field").textContent = robotNumber;
     if (currentScore > highScore) highScore = currentScore;
   } else if (userInput >= robotNumber) {
     document.querySelector(".robot-says").textContent = `Try lower!`;
