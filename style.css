@@ -25,7 +25,7 @@ body {
 }
 
 .robot {
-  background-image: url("img/robot-default.svg");
+  background-image: url("img/robot.svg");
   background-position: bottom;
   background-repeat: no-repeat;
   background-position: center bottom;

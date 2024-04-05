@@ -4,8 +4,6 @@
 function checkNumber(robotNumber, userInput) {
   //Check if user loses
   if (currentScore === 1) {
-    document.querySelector(".robot").style.backgroundImage =
-      "url(img/robot-sad.svg)";
     document.querySelector(".check").textContent = `Play again?`;
     document.querySelector(".current-score").textContent = `0`;
     document.querySelector(
@@ -19,8 +17,6 @@ function checkNumber(robotNumber, userInput) {
     document.querySelector(
       ".robot-says-heading"
     ).textContent = `Bleep blorp! You win!`;
-    document.querySelector(".robot").style.backgroundImage =
-      "url(img/robot-happy.svg)";
     document.querySelector(".robot-number-field").textContent = robotNumber;
     if (currentScore > highScore) highScore = currentScore;
     document.querySelector(".high-score").textContent = highScore;
@@ -42,8 +38,7 @@ function resetGame() {
   robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
   // Show number in console for debugging
   console.log(`The new number is ${robotNumber}. Still cheating!`);
-  document.querySelector(".robot").style.backgroundImage =
-    "url(img/robot-default.svg)";
+
   currentScore = 10;
   document.querySelector(".current-score").textContent = currentScore;
   document.querySelector(".check").textContent = `Check!`;
