@@ -35,7 +35,7 @@ function checkNumber(robotNumber, userInput) {
 // Reset game to play again
 function resetGame() {
   //Generate new number
-  robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
+  robotNumber = Math.trunc(Math.random() * 20 + 1);
   // Show number in console for debugging
   console.log(`The new number is ${robotNumber}. Still cheating!`);
 
@@ -49,7 +49,7 @@ function resetGame() {
 }
 
 // Generate number
-let robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
+let robotNumber = Math.trunc(Math.random() * 20 + 1);
 // Show number in console for debugging
 console.log(`The random number is ${robotNumber}. Cheater!`);
 
