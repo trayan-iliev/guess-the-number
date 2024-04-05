@@ -2,11 +2,25 @@
 
 // Game logic
 function checkNumber(robotNumber, userInput) {
+  //Check if user loses
+  if (currentScore === 1) {
+    document.querySelector(".check").textContent = `Play again?`;
+    document.querySelector(".current-score").textContent = `0`;
+    document.querySelector(
+      ".robot-says-heading"
+    ).textContent = `Bleep blorp! You lose!`;
+    return;
+  }
+
+  //Actual game
   if (userInput == robotNumber) {
-    document.querySelector(".robot-says-heading").textContent = `You win!`;
+    document.querySelector(
+      ".robot-says-heading"
+    ).textContent = `Bleep blorp! You win!`;
     document.querySelector(".robot-number-field").textContent = robotNumber;
     if (currentScore > highScore) highScore = currentScore;
     document.querySelector(".high-score").textContent = highScore;
+    document.querySelector(".check").textContent = `Play again?`;
   } else if (userInput >= robotNumber) {
     document.querySelector(".robot-says-heading").textContent = `Try lower!`;
     currentScore--;
@@ -18,19 +32,37 @@ function checkNumber(robotNumber, userInput) {
   }
 }
 
-// Keeping score
-let currentScore = 20;
-let highScore = 0;
+// Reset game to play again
+function resetGame() {
+  //Generate new number
+  robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
+  // Show number in console for debugging
+  console.log(`The new number is ${robotNumber}. Still cheating!`);
+  currentScore = 10;
+  document.querySelector(".current-score").textContent = currentScore;
+  document.querySelector(".check").textContent = `Check!`;
 
-// Show number in console for debugging
-const robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
+  document.querySelector(
+    ".robot-says-heading"
+  ).textContent = `What humber am I thinking of?`;
+}
+
 // Generate number
+let robotNumber = Math.floor(Math.random() * (1 - 20) + 20);
+// Show number in console for debugging
 console.log(`The random number is ${robotNumber}. Cheater!`);
+
+// Keeping score
+let currentScore = 10;
+let highScore = 0;
 
 // Run game
 let userInput;
 document.querySelector(".check").addEventListener("click", function () {
-  userInput = document.querySelector(".input").value;
-  checkNumber(robotNumber, userInput);
-  console.log(currentScore, highScore);
+  if (document.querySelector(".check").textContent === `Check!`) {
+    userInput = document.querySelector(".input").value;
+    checkNumber(robotNumber, userInput);
+  } else {
+    resetGame();
+  }
 });
