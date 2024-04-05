@@ -29,13 +29,16 @@ body {
   background-position: bottom;
   background-repeat: no-repeat;
   background-position: center bottom;
-  height: 30em;
+  /* max-height: 800px;
+  min-height: 200px; */
+  height: 50vh;
   padding-top: 1em;
   margin-top: 1em;
   background-color: #b3b3b3;
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .robot-number-field {
@@ -55,20 +58,17 @@ body {
   letter-spacing: 3px;
 }
 
-/* .robot img {
-  min-width: 100px;
-  max-width: 400px;
-  margin-top: 1em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
 .bottom {
   display: flex;
   font-weight: 300;
   font-size: 50px;
   justify-content: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .robot-says {
@@ -96,11 +96,12 @@ body {
   border: 5px solid #b3b3b3;
   outline: none;
   color: #b3b3b3;
-  font-size: 60px;
+  /* font-size: clamp(60px, 2vw, 102px); */
+  font-size: 50px;
   font-weight: 700;
   text-align: center;
   width: 100px;
-  margin-right: 0.7em;
+  margin-right: 2vw;
 }
 
 .btn {
@@ -112,6 +113,41 @@ body {
   color: #b3b3b3;
 }
 
+.btn:active {
+  transform: translateY(3px);
+}
+
 .copyright {
-  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2vh;
+  text-align: center;
+  font-size: 18px;
+}
+
+.copyright a {
+  color: #b3b3b3;
+}
+
+.copyright a:hover {
+  text-decoration: none;
+}
+
+.score {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.score-text {
+  font-size: 20px;
+}
+
+.number-score {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
 }
