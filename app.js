@@ -6,12 +6,15 @@ function checkNumber(robotNumber, userInput) {
     document.querySelector(".robot-says-heading").textContent = `You win!`;
     document.querySelector(".robot-number-field").textContent = robotNumber;
     if (currentScore > highScore) highScore = currentScore;
+    document.querySelector(".high-score").textContent = highScore;
   } else if (userInput >= robotNumber) {
     document.querySelector(".robot-says-heading").textContent = `Try lower!`;
     currentScore--;
+    document.querySelector(".current-score").textContent = currentScore;
   } else {
     document.querySelector(".robot-says-heading").textContent = `Try higher!`;
     currentScore--;
+    document.querySelector(".current-score").textContent = currentScore;
   }
 }
 
